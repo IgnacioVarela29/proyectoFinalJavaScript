@@ -11,8 +11,13 @@ console.log("Su saldo inicial es de: $" + saldoInicial);
 
 let tipoDeOperacion;
 let subTotal = saldoInicial;
-const VOLVER_AL_MENU = 3;
 let cantidadDeMovimientos = 0;
+
+function volverAlMenu(){
+    tipoDeOperacion + 4;
+}
+
+
 
 do {
     tipoDeOperacion = prompt("Que movimiento quiere realizar?\n\ Ingrese:\n\ 1. Ingreso de dinero.\n\ 2. Gasto.\n\ 3. Mostrar resumen parcial.\n\ 4.Cancelar.");
@@ -32,15 +37,16 @@ do {
         }
         subTotal = parseFloat(saldoInicial) + parseFloat(ingreso);
 
+        alert("Movimiento: +$" + ingreso);
         console.log("Movimiento: +$" + ingreso);
-
+        alert("Actualmente tiene: $" + subTotal);
         console.log("Actualmente tiene: $" + subTotal);
 
         saldoInicial = subTotal;
 
         cantidadDeMovimientos++;
 
-        tipoDeOperacion + VOLVER_AL_MENU;
+        volverAlMenu();
     } else if (tipoDeOperacion == 2) {
         let gasto = prompt("Ingrese cuanto dinero gasto:");
         while (gasto > saldoInicial) {
@@ -53,23 +59,25 @@ do {
         
         subTotal = parseFloat(saldoInicial) - parseFloat(gasto);
 
-        
+        alert("Movimiento: -$" + gasto);
         console.log("Movimiento: -$" + gasto);
-        
+        alert("Actualmente tiene: $" + subTotal);
         console.log("Actualmente tiene: $" + subTotal);
         
         saldoInicial = subTotal;
         
         cantidadDeMovimientos++;
     
-        tipoDeOperacion + VOLVER_AL_MENU;
+        volverAlMenu();
 
     } else if (tipoDeOperacion == 3) {
+        alert("RESUMEN PARCIAL:\n\ Se realizaron: " + cantidadDeMovimientos + " movimientos.\n\ Usted tiene: $" + saldoInicial + " actualmente.");
         console.log("RESUMEN PARCIAL:\n\ Se realizaron: " + cantidadDeMovimientos + " movimientos.\n\ Usted tiene: $" + saldoInicial + " actualmente.");
 
     } else if (tipoDeOperacion == 4) {
 
-        console.log("RESUMEN FINAL:\n\ Se realizaron: " + cantidadDeMovimientos + " movimientos.\n\ Usted tiene: $" + saldoInicial + " al finalizar.")
+        alert("RESUMEN FINAL:\n\ Se realizaron: " + cantidadDeMovimientos + " movimientos.\n\ Usted tiene: $" + saldoInicial + " al finalizar.");
+        console.log("RESUMEN FINAL:\n\ Se realizaron: " + cantidadDeMovimientos + " movimientos.\n\ Usted tiene: $" + saldoInicial + " al finalizar.");
         alert("Fin de la operacion.");
         console.log("Fin de la operacion.");
     }
