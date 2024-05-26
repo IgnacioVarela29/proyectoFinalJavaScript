@@ -1,4 +1,3 @@
-alert("Bienvenido a su billetera virtual.")
 let saldoInicial = parseInt(prompt("Bienvenido a su billetera virtual.\n\ Ingrese su saldo actual:"));
 
 while (saldoInicial === '' || saldoInicial <= 0 || isNaN(saldoInicial)) {
