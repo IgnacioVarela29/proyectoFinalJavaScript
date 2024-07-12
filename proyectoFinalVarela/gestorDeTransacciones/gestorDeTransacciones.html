@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../paginaPrincipal/estilos.css">
+    <title>Gestor de Transacciones</title>
+</head>
+
+<body>
+    <h1>VWM.com</h1>
+    <h2>Gestione sus transacciones aquí.</h2>
+    <p class="bold">Saldo: $<span id="saldo"></span></p>
+    <!-- <p class="bold">Movimientos Realizados: <span id="movimientos"></span></p> -->
+    <form id="formulario-operacion">
+        <div>
+            <input type="radio" name="tipo-operacion" value="1"> Ingreso de dinero<br>
+            <input type="radio" name="tipo-operacion" value="2"> Gasto<br>
+        </div>
+        <div>
+            <input class="campo" type="text" id="nombre-operacion" placeholder="Nombre de la operación">
+            <input class="campo" type="number" id="monto" step="0.1" placeholder="Ingrese un monto">
+        </div>
+        <button type="submit">Registrar Movimiento</button>
+    </form>
+    <button id="reiniciar">Reiniciar</button>
+    <h3>Movimientos:</h3>
+    <ul id="lista-movimientos"></ul>
+    <h3>Resumen:</h3>
+    <p id="resumen"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="gestorDeTransacciones.js"></script>
+</body>
+
+</html>
